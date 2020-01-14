@@ -1,0 +1,91 @@
+<div class="test">
+	<div>
+		Simple Variable Insertion: {{ name }}
+	</div>
+
+	<div>
+		Using For Each		
+
+		<span *ngFor="let item of items">
+			{{ item }}
+		</span>
+	</div>
+
+	<div>
+		Using Object and Service
+
+		<span *ngFor="let user of users">
+			Name: {{ user.name }} Surname: {{ user.surname }}
+		</span>
+	</div>
+
+	<div>
+		Property Binding
+		
+		<input type="text" [value]="inputVar">
+	</div>
+
+	<div>
+		CSS Class Binding
+
+		<span [class]="cssBindingClass">
+			I am now dynamic CSS class
+		</span>
+
+		<span [class.text-orange]="hasError">
+			I am condional CSS class
+		</span>
+
+		<span [ngClass]="conditionalCSSClasses">
+			I am now multiple conditonal CSS classes
+		</span>
+	</div>
+
+	<div>
+		Style Binding (I would not encorouge this)
+
+		<span [style.color]="textColor">
+			Text color based on property
+		</span>
+	</div>
+
+	<div>
+		Event Binding
+
+		<span>
+			By Clicking this number will change: {{ randomNum }}
+		</span>
+
+		<span>
+			<button (click)="onButtonClick()">Click Me!</button>
+			<button (click)="onButtonClickWithEvent($event)">Click With Event!</button>
+			<button (click)="randomNum = -1">Inline</button>
+		</span>
+	</div>
+
+	<div>
+		Reference Binding
+
+		<span>
+			Here is what you have written: {{ writtenText }}
+		</span>
+
+		<span>
+			<input #inputRefName type="text">
+			<button (click)="onReferenceButtonClick(inputRefName)">Update Written</button>
+		</span>
+	</div>
+
+	<div>
+		Two Way Binding
+
+		<span>
+			<!-- Banana inside a box -->
+			<input [(ngModel)]="autoSyncTextInput" type="text">
+		</span>
+
+		<span>
+			Input will be auto-synced here: {{ autoSyncTextInput }}
+		</span>
+	</div>
+</div>
